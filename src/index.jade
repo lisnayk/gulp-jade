@@ -1,0 +1,254 @@
+extends layouts/_bootstrap
+block title
+	title Front-end технологии
+block styles
+	// build:css(.) styles/vendor.css 
+	// bower:css 
+	// endbower
+	// endbuild
+	link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Lobster')
+	// build:css styles/main.css 
+	// inject:css
+	// endinject
+	// endbuild
+
+block body
+	// Fixed navbar manual converted	
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			.navbar-header
+				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href='#')
+					img(alt="Brand" src="images/logo.png" height="25")
+			#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li.active
+						a(href='#') Главная
+					li
+						a(href='#about') О курсе
+					li
+						a(href='#countdown') Осталось времени
+					li
+						a(href='#slides') Галерея
+					li
+						a(href='#help') Помощь
+					li
+						a(href='#contacts') Контакты
+					
+	// Carusel from templates
+	+carousel("header-slider",[
+		{image:"images/slides/slide-1.jpg",p:"Современные технологии"},
+		{image:"images/slides/slide-2.jpg",p:"Семантическая разметка документа"},
+		{image:"images/slides/slide-3.jpg",p:"Менеджеры зависимостей"},
+		{image:"images/slides/slide-4.jpg",p:"Сборщик проекта"},
+		{image:"images/slides/slide-5.jpg",p:"Компилятор JavaScript"},
+		{image:"images/slides/slide-6.jpg",p:"Скаффолдинг"}
+		])
+	#about.container.about
+		.row
+			.col-lg-4
+				img.img-circle.center(src='images/nodejs_ico.png', alt='Generic placeholder image', width='140', height='140')
+				h2 Node.js
+				p Node.js это интерпретатор языка JavaScript. Сам по себе Node.js является C++ приложением, которое получает на входе JavaScript-код и выполняет его.
+				p
+					a.btn.btn-default(href='#', role='button') Подробнее »
+			.col-lg-4
+				img.img-circle.center(src='images/npm.png', alt='Generic placeholder image', width='140', height='140')
+				h2 NPM
+				p Npm (node package manager) — это стандартный менеджер пакетов, автоматически устанавливающийся вместе с Node.js. Bспользуется для скачивания пакетов (библиотек).
+				p
+					a.btn.btn-default(href='#', role='button') Подробнее »
+			.col-lg-4
+				img.img-circle.center(src='images/gulpjs-logo.jpg', alt='Generic placeholder image', width='140', height='140')
+				h2 GulpJs
+				p Gulp представляет собой набор инструментов для автоматизации рутинных или трудоемких задач возникаемых в процессе разработки front-end приложений.
+				p
+					a.btn.btn-default(href='http://gulpjs.com/', role='button') Подробнее »
+	#countdown.countdown
+		.countdown-container.container
+			h2.text-center До экзамена осталось!
+			.clock.row
+				.clock-item.clock-days.countdown-time-value.col-sm-6.col-md-3
+					.wrap
+						.inner
+							#canvas-days.clock-canvas
+							.text
+								p.val %D
+								p.type-days.type-time DAYS
+				.clock-item.clock-hours.countdown-time-value.col-sm-6.col-md-3
+					.wrap
+						.inner
+							#canvas-hours.clock-canvas
+							.text
+								p.val %H
+								p.type-hours.type-time HOURS
+				.clock-item.clock-minutes.countdown-time-value.col-sm-6.col-md-3
+					.wrap
+						.inner
+							#canvas-minutes.clock-canvas
+							.text
+								p.val %M
+								p.type-minutes.type-time MINUTES
+				.clock-item.clock-seconds.countdown-time-value.col-sm-6.col-md-3
+					.wrap
+						.inner
+							#canvas-seconds.clock-canvas
+							.text
+								p.val %S
+								p.type-seconds.type-time SECONDS
+	#slides.grid-slides
+		.container
+			h2 Галерея на двух плагинах
+			.loader
+				img(src="images/svg-loaders/spinning-circles.svg")
+			.lightgallery
+				a(href="images/gslider/img-1.jpg")
+					img( src="images/gslider/thumbs/img-1.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-3.jpg")
+					img( src="images/gslider/thumbs/img-3.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-2.jpg")
+					img( src="images/gslider/thumbs/img-2.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-1.jpg")
+					img( src="images/gslider/thumbs/img-1.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-2.jpg")
+					img( src="images/gslider/thumbs/img-2.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-3.jpg")
+					img( src="images/gslider/thumbs/img-3.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-1.jpg")
+					img( src="images/gslider/thumbs/img-1.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-2.jpg")
+					img( src="images/gslider/thumbs/img-2.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-3.jpg")
+					img( src="images/gslider/thumbs/img-3.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-1.jpg")
+					img( src="images/gslider/thumbs/img-1.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-2.jpg")
+					img( src="images/gslider/thumbs/img-2.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-3.jpg")
+					img( src="images/gslider/thumbs/img-3.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-1.jpg")
+					img( src="images/gslider/thumbs/img-1.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-2.jpg")
+					img( src="images/gslider/thumbs/img-2.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-3.jpg")
+					img( src="images/gslider/thumbs/img-3.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-1.jpg")
+					img( src="images/gslider/thumbs/img-1.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-2.jpg")
+					img( src="images/gslider/thumbs/img-2.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+				a(href="images/gslider/img-3.jpg")
+					img( src="images/gslider/thumbs/img-3.jpg")
+					.poster
+						img( src="images/gslider/zoom.png")
+	#help.help
+		.container
+			h2 Полезные материалы
+			.row
+				.col-lg-4
+					img.img-responsive(src="images/logos/gulp.png")
+				.col-lg-8
+					ul.list-group
+						li.list-group-item
+							a(href="http://gulpjs.com/") Официальный сайт
+						li.list-group-item
+							a(href="https://learn.javascript.ru/screencast/gulp") Скринкаст по GulpJS (RU)
+						li.list-group-item
+							a(href="log.rangle.io/angular-gulp-bestpractices/") Лучшая практика использования (EN)
+						li.list-group-item
+							a(href="http://www.creative-seo.ru/blog/gulp-dlya-nachinayushchih/") Gulp для начинающих
+			hr
+			.row
+				.col-lg-4
+					img.img-responsive(src="images/logos/nodejs.png")
+
+				.col-lg-8
+					ul.list-group
+						li.list-group-item
+							a(href="http://gulpjs.com/") Официальный сайт
+						li.list-group-item
+							a(href="https://learn.javascript.ru/screencast/gulp") Скринкаст по GulpJS (RU)
+						li.list-group-item
+							a(href="log.rangle.io/angular-gulp-bestpractices/") Лучшая практика использования (EN)
+						li.list-group-item
+							a(href="http://www.creative-seo.ru/blog/gulp-dlya-nachinayushchih/") Gulp для начинающих
+			hr
+			.row
+				.col-lg-4
+					img.img-responsive(src="images/logos/sass.svg")
+
+				.col-lg-8
+					ul.list-group
+						li.list-group-item
+							a(href="http://gulpjs.com/") Официальный сайт
+						li.list-group-item
+							a(href="https://learn.javascript.ru/screencast/gulp") Скринкаст по GulpJS (RU)
+						li.list-group-item
+							a(href="log.rangle.io/angular-gulp-bestpractices/") Лучшая практика использования (EN)
+						li.list-group-item
+							a(href="http://www.creative-seo.ru/blog/gulp-dlya-nachinayushchih/") Gulp для начинающих
+						li.list-group-item
+							a(href="https://habrahabr.ru/post/251807/") О продакшен версии
+							
+	#contacts.contacts
+		.container
+			.row
+				.col-lg-12
+					h2 Контакты
+		iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2679.0559133240263!2d35.18122531599921!3d47.819133979199385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc5e0a7b03e75f%3A0x2d7df7efb2c8193c!2z0JfQsNC_0L7RgNGW0LfRjNC60LjQuSDQvdCw0YbRltC-0L3QsNC70YzQvdC40Lkg0YPQvdGW0LLQtdGA0YHQuNGC0LXRgg!5e0!3m2!1sru!2sua!4v1487600496149" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen)
+		
+
+	footer
+		.container
+			p.pull-right
+				a(href="#") Back to top
+			p © 2016 ЗНУ, Кафедра програмной инженерии
+
+	
+block scripts
+	// build:js(.) scripts/vendor.js 
+	// bower:js
+	// endbower
+	// endbuild
+	// build:js(src) scripts/script.js 
+	// inject:js
+	// endinject
+	// endbuild
+
