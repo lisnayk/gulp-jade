@@ -20,4 +20,4 @@
 
 </ul>
 <h2>Страница курса</h2>
-<a href="https://learn.javascript.ru/screencast/gulp">https://learn.javascript.ru/screencast/gulp</a>
+<a href="http://mmodel.znu.edu.ua/ttp/">http://mmodel.znu.edu.ua/ttp/</a>
